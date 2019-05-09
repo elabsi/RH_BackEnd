@@ -2,6 +2,7 @@ package ma.ensa.entities;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.DiscriminatorValue;
@@ -22,7 +23,7 @@ public class Collaborateur extends Contact {
 	private String motDePass;
 	private String photo;
 	@OneToMany(mappedBy="collaborateur")
-	private List<Pointage> pointages;
+	private List<Pointage> pointages = new ArrayList<Pointage>();
 	public List<Pointage> getPointages() {
 		return pointages;
 	}

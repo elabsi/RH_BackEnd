@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Pointage {
 	@Id
@@ -21,8 +23,16 @@ public class Pointage {
 	private int modeModifie;
 	private int status;
 	@ManyToOne
+	@JsonIgnore
 	private Collaborateur collaborateur;
-	
+	@ManyToOne
+	private SourcePointage sourcePointage;
+	public SourcePointage getSourcePointage() {
+		return sourcePointage;
+	}
+	public void setSourcePointage(SourcePointage sourcePointage) {
+		this.sourcePointage = sourcePointage;
+	}
 	public Collaborateur getCollaborateur() {
 		return collaborateur;
 	}
