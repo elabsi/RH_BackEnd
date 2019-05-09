@@ -21,7 +21,14 @@ public class Collaborateur extends Contact {
 	private boolean compteActive;
 	private String motDePass;
 	private String photo;
-	
+	@OneToMany(mappedBy="collaborateur")
+	private List<Pointage> pointages;
+	public List<Pointage> getPointages() {
+		return pointages;
+	}
+	public void setPointages(List<Pointage> pointages) {
+		this.pointages = pointages;
+	}
 	@OneToMany(mappedBy="collaborateur")
 	private List<LigneGroupe> ligneGroupes;
 	
