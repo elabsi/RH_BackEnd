@@ -1,5 +1,6 @@
 package ma.ensa.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -18,12 +19,21 @@ public class TypeAttestation {
 	private Long id;
 	private String nom;
 	private String description;
-	
+
+	@OneToMany(mappedBy="typeAttestation")
+	@JsonIgnore
+	private List<DemandeAttestation> demandeAttestations = new ArrayList<DemandeAttestation>();
 	@OneToMany(mappedBy="typeAttestation")
 	@JsonIgnore
 	private List<AttestationFormation> attestationFormations;
 	
 	
+	public List<DemandeAttestation> getDemandeAttestations() {
+		return demandeAttestations;
+	}
+	public void setDemandeAttestations(List<DemandeAttestation> demandeAttestations) {
+		this.demandeAttestations = demandeAttestations;
+	}
 	public List<AttestationFormation> getAttestationFormations() {
 		return attestationFormations;
 	}

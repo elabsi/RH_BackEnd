@@ -22,6 +22,14 @@ public class Collaborateur extends Contact {
 	private boolean compteActive;
 	private String motDePass;
 	private String photo;
+	@ManyToOne
+ 	private ProfilValidationDemande profilValidationDemande;
+	public ProfilValidationDemande getProfilValidationDemande() {
+		return profilValidationDemande;
+	}
+	public void setProfilValidationDemande(ProfilValidationDemande profilValidationDemande) {
+		this.profilValidationDemande = profilValidationDemande;
+	}
 	@OneToMany(mappedBy="collaborateur")
 	private List<Pointage> pointages = new ArrayList<Pointage>();
 	public List<Pointage> getPointages() {
