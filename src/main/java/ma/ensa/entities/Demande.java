@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -28,6 +29,25 @@ public abstract class Demande {
 	private String observation;
 	private int status;
 	private String motifRefus;
+	@ManyToOne
+	private Collaborateur collaborateur;
+  	
+	public Demande(Long id, Date dateDemande, String observation, int status, String motifRefus,
+			Collaborateur collaborateur) {
+		super();
+		this.id = id;
+		this.dateDemande = dateDemande;
+		this.observation = observation;
+		this.status = status;
+		this.motifRefus = motifRefus;
+		this.collaborateur = collaborateur;
+	}
+	public Collaborateur getCollaborateur() {
+		return collaborateur;
+	}
+	public void setCollaborateur(Collaborateur collaborateur) {
+		this.collaborateur = collaborateur;
+	}
 	@OneToMany(mappedBy="demande")
 	private List<Validation> validations = new ArrayList<Validation>();
 	public List<Validation> getValidations() {

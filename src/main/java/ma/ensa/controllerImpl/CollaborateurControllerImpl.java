@@ -40,7 +40,7 @@ public class CollaborateurControllerImpl implements CollaborateurController {
 	}
 
 	@Override
-	@GetMapping("/allCollaborateur")
+	@GetMapping("/allCollaborateurs")
 	public List<Collaborateur> allCollaborateurs() {
 		return collaborateurMetier.allCollaborateurs();
 	}

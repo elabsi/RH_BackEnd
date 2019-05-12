@@ -1,5 +1,6 @@
 package ma.ensa.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -11,28 +12,18 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class TypeAttestation {
+public class TypeAttestationEntreprise {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String nom;
 	private String description;
-
-	@OneToMany(mappedBy="typeAttestation")
+	@OneToMany(mappedBy="typeAttestationEntreprise")
 	@JsonIgnore
-	private List<AttestationFormation> attestationFormations;
-	
-	
-	public List<AttestationFormation> getAttestationFormations() {
-		return attestationFormations;
-	}
-	public void setAttestationFormations(List<AttestationFormation> attestationFormations) {
-		this.attestationFormations = attestationFormations;
-	}
-	public TypeAttestation() {
+	private List<DemandeAttestation> demandeAttestations = new ArrayList<DemandeAttestation>();
+	public TypeAttestationEntreprise() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Long getId() {
 		return id;
@@ -52,6 +43,5 @@ public class TypeAttestation {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
+
 }

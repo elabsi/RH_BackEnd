@@ -20,6 +20,14 @@ public class DemandeAuthSortie extends Demande{
 	private Date  heureReteur;
 	@ManyToOne
 	private MotifSortie motifSortie; 
+	public DemandeAuthSortie(Long id, Date dateDemande, String observation, int status, String motifRefus,
+			Collaborateur collaborateur, Date dateSortie, Date heureSortie, Date heureReteur, MotifSortie motifSortie) {
+		super(id, dateDemande, observation, status, motifRefus, collaborateur);
+		this.dateSortie = dateSortie;
+		this.heureSortie = heureSortie;
+		this.heureReteur = heureReteur;
+		this.motifSortie = motifSortie;
+	}
 	public MotifSortie getMotifSortie() {
 		return motifSortie;
 	}

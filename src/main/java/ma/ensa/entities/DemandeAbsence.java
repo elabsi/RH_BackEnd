@@ -20,6 +20,19 @@ public class DemandeAbsence  extends Demande{
 	private double jourOuvrable;
 	private double repos;
 	private double feries;
+
+	public DemandeAbsence(Long id, Date dateDemande, String observation, int status, String motifRefus,
+			Collaborateur collaborateur, Date dateDebut, Date dateFin, Long exercice, double jourOuvrable, double repos,
+			double feries, MotifAbsence motifAbsence) {
+		super(id, dateDemande, observation, status, motifRefus, collaborateur);
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+		this.exercice = exercice;
+		this.jourOuvrable = jourOuvrable;
+		this.repos = repos;
+		this.feries = feries;
+		this.motifAbsence = motifAbsence;
+	}
 	@ManyToOne
 	private MotifAbsence motifAbsence; 
 	public MotifAbsence getMotifAbsence() {

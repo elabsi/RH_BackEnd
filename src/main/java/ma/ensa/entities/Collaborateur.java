@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @DiscriminatorValue("collaborateur")
 public class Collaborateur extends Contact {
@@ -22,6 +24,15 @@ public class Collaborateur extends Contact {
 	private boolean compteActive;
 	private String motDePass;
 	private String photo;
+	@OneToMany(mappedBy = "collaborateur")
+	@JsonIgnore
+	private List<Demande> demandes = new ArrayList<Demande>();
+	public List<Demande> getDemandes() {
+		return demandes;
+	}
+	public void setDemandes(List<Demande> demandes) {
+		this.demandes = demandes;
+	}
 	@ManyToOne
  	private ProfilValidationDemande profilValidationDemande;
 	public ProfilValidationDemande getProfilValidationDemande() {

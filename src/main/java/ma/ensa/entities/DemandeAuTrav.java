@@ -23,6 +23,17 @@ public class DemandeAuTrav extends Demande{
 	@ManyToOne
 	private MotifTravail motifTravail;
 	
+	public DemandeAuTrav(Long id, Date dateDemande, String observation, int status, String motifRefus,
+			Collaborateur collaborateur, Date dateTravail, int type, int nombreHeures, Date heureDebut, Date heureFin,
+			MotifTravail motifTravail) {
+		super(id, dateDemande, observation, status, motifRefus, collaborateur);
+		this.dateTravail = dateTravail;
+		this.type = type;
+		this.nombreHeures = nombreHeures;
+		this.heureDebut = heureDebut;
+		this.heureFin = heureFin;
+		this.motifTravail = motifTravail;
+	}
 	public MotifTravail getMotifTravail() {
 		return motifTravail;
 	}
