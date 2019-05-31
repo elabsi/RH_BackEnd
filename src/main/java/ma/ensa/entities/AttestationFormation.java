@@ -23,7 +23,13 @@ public class AttestationFormation {
 	private String specialite;
 	private String mention;
 	private String nomEtablissement;
-	
+	private String nomFichier;
+	public String getNomFichier() {
+		return nomFichier;
+	}
+	public void setNomFichier(String nomFichier) {
+		this.nomFichier = nomFichier;
+	}
 	@ManyToOne
 	private Ville ville;
 	@ManyToOne
