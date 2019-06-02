@@ -7,14 +7,20 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import ma.ensa.metiers.StorageContratMertier;
+import ma.ensa.metiers.StorageAttestationFormationMetier;
 import ma.ensa.metiers.StoragePhotoCollabMetier;
 
 
 @SpringBootApplication
 public class AppRhApplication  implements CommandLineRunner {
 	 
-	  @Resource
-	  StoragePhotoCollabMetier storageService;
+	 @Resource
+	  StoragePhotoCollabMetier storagePhotoCollabMetier;
+	 @Resource
+	  StorageAttestationFormationMetier storagePdfAttestationFormationMetier;
+	 @Resource
+	  StorageContratMertier storageContratMertier;
 	 
 		@Autowired
 		public static void main(String[] args) {
@@ -24,7 +30,9 @@ public class AppRhApplication  implements CommandLineRunner {
 	  @Override
 	  public void run(String... arg) throws Exception {
 //	    storageService.deleteAll();
-	    storageService.init();
+		  storagePhotoCollabMetier.init();
+		  storagePdfAttestationFormationMetier.init();
+		  storageContratMertier.init();
 	  }
 	}
 

@@ -28,7 +28,13 @@ public class Contrat {
 	private int periodeEssai2;
 	private String qualification;
 	private String ancieneteAjoute;
-	
+	private String nomFichier;
+	public String getNomFichier() {
+		return nomFichier;
+	}
+	public void setNomFichier(String nomFichier) {
+		this.nomFichier = nomFichier;
+	}
 	@ManyToOne
 	@JsonIgnore
 	private Contact contact;
