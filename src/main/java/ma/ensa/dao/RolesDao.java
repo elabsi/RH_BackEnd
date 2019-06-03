@@ -1,9 +1,16 @@
 package ma.ensa.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
 
-import ma.ensa.entities.Roles;
+import org.springframework.data.jpa.repository.JpaRepository ;
 
-public interface RolesDao extends JpaRepository<Roles, Long> {
+
+import ma.ensa.entities.user.Role;
+import ma.ensa.entities.user.RoleName;
+
+
+public interface RolesDao extends JpaRepository<Role, Long> {
+
+    Optional<Role> findByName(RoleName roleName);
 
 }

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ma.ensa.dao.UtilisateurDao;
-import ma.ensa.entities.Utilisateur;
+import ma.ensa.entities.user.Utilisateur;
 import ma.ensa.metiers.UtilisateurMetier;
 
 @Service
@@ -15,22 +15,22 @@ public class UtilisateurMetierImpl implements UtilisateurMetier {
 	@Autowired
 	private UtilisateurDao dao;
 	@Override
-	public Utilisateur getUtilisateurById(Long id) {
+	public Utilisateur getUserById(Long id) {
 		return this.dao.findById(id).get();
 	}
 
 	@Override
-	public Utilisateur addUtilisateur(Utilisateur u) {
+	public Utilisateur addUser(Utilisateur u) {
 		return this.dao.save(u);
 	}
 
 	@Override
-	public void updateUtilisateur(Utilisateur u) {
+	public void updateUser(Utilisateur u) {
 		this.dao.save(u);
 	}
 
 	@Override
-	public List<Utilisateur> allUtilisateurs() {
+	public List<Utilisateur> allUsers() {
 		return this.dao.findAll();
 	}
 
