@@ -1,7 +1,10 @@
 package ma.ensa.entities.user;
 
 public enum  RoleName {
-    ROLE_USER,
-    ROLE_PM,
-    ROLE_ADMIN
+    ROLE_EMPLOYE,
+    ROLE_ADMINISTRATEUR,
+    ROLE_ROOT,
+    ROLE_RH,
+    ROLE_CHEF_SERVICE
+    
 }
