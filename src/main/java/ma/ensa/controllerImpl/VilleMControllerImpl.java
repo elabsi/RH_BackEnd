@@ -14,7 +14,7 @@ import ma.ensa.entities.Ville;
 import ma.ensa.metiers.VilleMetier;
 
 @RestController
-@RequestMapping("/ville")
+@RequestMapping("parametres/ville")
 public class VilleMControllerImpl implements VilleController {
  
 	@Autowired

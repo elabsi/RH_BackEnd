@@ -14,7 +14,7 @@ import ma.ensa.entities.Fonction;
 import ma.ensa.metiers.FonctionMetier;
 
 @RestController
-@RequestMapping("/fonction")
+@RequestMapping("/parametres/fonction")
 public class FonctionControllerImpl implements FonctionController {
  
 	@Autowired

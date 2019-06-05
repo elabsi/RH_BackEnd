@@ -14,7 +14,7 @@ import ma.ensa.entities.TypeActivite;
 import ma.ensa.metiers.TypeActiviteMetier;
 
 @RestController
-@RequestMapping("/typeActivite")
+@RequestMapping("/parametres/typeActivite")
 public class TypeActiviteControllerImpl implements TypeActiviteController {
 	@Autowired
 	private TypeActiviteMetier typeActiviteMetier;

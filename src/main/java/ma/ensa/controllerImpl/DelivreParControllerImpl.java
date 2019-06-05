@@ -14,7 +14,7 @@ import ma.ensa.entities.DelivrePar;
 import ma.ensa.metiers.DelivreParMetier;
 
 @RestController
-@RequestMapping("/delivrePar")
+@RequestMapping("/parametres/delivrePar")
 public class DelivreParControllerImpl implements DelivreParController{
  
 	@Autowired

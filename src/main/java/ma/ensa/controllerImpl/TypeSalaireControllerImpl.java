@@ -14,7 +14,7 @@ import ma.ensa.entities.TypeSalaire;
 import ma.ensa.metiers.TypeSalaireMetier;
 
 @RestController
-@RequestMapping("/typeSalaire")
+@RequestMapping("/parametres/typeSalaire")
 public class TypeSalaireControllerImpl implements TypeSalaireController {
 	@Autowired
 	private TypeSalaireMetier typeSalaireMetier;

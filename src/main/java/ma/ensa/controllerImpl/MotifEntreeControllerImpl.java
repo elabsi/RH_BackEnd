@@ -14,7 +14,7 @@ import ma.ensa.entities.MotifEntree;
 import ma.ensa.metiers.MotifEntreeMetier;
 
 @RestController
-@RequestMapping("/motifEntree")
+@RequestMapping("/parametres/motifEntree")
 public class MotifEntreeControllerImpl implements MotifEntreeController {
  
 	@Autowired

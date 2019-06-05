@@ -14,7 +14,7 @@ import ma.ensa.entities.TypeProche;
 import ma.ensa.metiers.TypeProcheMetier;
 
 @RestController
-@RequestMapping("/typeProche")
+@RequestMapping("/parametres/typeProche")
 public class TypeProcheControllerImpl implements TypeProcheController {
  
 	@Autowired

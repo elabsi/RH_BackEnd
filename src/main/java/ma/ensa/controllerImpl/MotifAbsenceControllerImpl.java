@@ -14,7 +14,7 @@ import ma.ensa.entities.MotifAbsence;
 import ma.ensa.metiers.MotifAbsenceMetier;
 
 @RestController
-@RequestMapping("/motifAbsence")
+@RequestMapping("/parametres/motifAbsence")
 public class MotifAbsenceControllerImpl implements MotifAbsenceController {
  
 	@Autowired

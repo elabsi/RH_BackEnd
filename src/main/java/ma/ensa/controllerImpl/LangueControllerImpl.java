@@ -14,7 +14,7 @@ import ma.ensa.entities.Langue;
 import ma.ensa.metiers.LangueMetier;
 
 @RestController
-@RequestMapping("/langue")
+@RequestMapping("/parametres/langue")
 public class LangueControllerImpl implements LangueController {
  
 	@Autowired

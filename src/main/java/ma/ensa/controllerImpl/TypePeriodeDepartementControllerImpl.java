@@ -14,7 +14,7 @@ import ma.ensa.entities.TypePeriodeDepartement;
 import ma.ensa.metiers.TypePeriodeDepartementMetier;
 
 @RestController
-@RequestMapping("/typePeriodeDepartement")
+@RequestMapping("/parametres/typePeriodeDepartement")
 public class TypePeriodeDepartementControllerImpl implements TypePeriodeDepartementController {
  
 	@Autowired

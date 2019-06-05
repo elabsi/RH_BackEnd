@@ -14,7 +14,7 @@ import ma.ensa.entities.TypeDocument;
 import ma.ensa.metiers.TypeDocumentMetier;
 
 @RestController
-@RequestMapping("/typeDocument")
+@RequestMapping("/parametres/typeDocument")
 public class TypeDocumentControllerImpl implements TypeDocumentController {
 	@Autowired
 	private TypeDocumentMetier typeDocumentMetier;

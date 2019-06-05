@@ -14,7 +14,7 @@ import ma.ensa.entities.Categorie;
 import ma.ensa.metiers.CategorieMetier;
 
 @RestController
-@RequestMapping("/categorie")
+@RequestMapping("/parametres/categorie")
 public class CategorieControllerImpl implements CategorieController {
  
 	@Autowired

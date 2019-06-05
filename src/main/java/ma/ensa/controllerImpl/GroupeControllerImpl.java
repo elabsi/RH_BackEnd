@@ -14,7 +14,7 @@ import ma.ensa.entities.Groupe;
 import ma.ensa.metiers.GroupeMetier;
 
 @RestController 
-@RequestMapping("/groupe")
+@RequestMapping("/parametres/groupe")
 public class GroupeControllerImpl implements GroupeController {
  
 	@Autowired

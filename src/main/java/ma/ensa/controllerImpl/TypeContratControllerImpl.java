@@ -14,7 +14,7 @@ import ma.ensa.entities.TypeContrat;
 import ma.ensa.metiers.TypeContratMetier;
 
 @RestController
-@RequestMapping("/typeContrat")
+@RequestMapping("/parametres/typeContrat")
 public class TypeContratControllerImpl implements TypeContratController {
  
 	@Autowired

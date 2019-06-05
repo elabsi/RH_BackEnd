@@ -14,7 +14,7 @@ import ma.ensa.entities.TypeAttestationEntreprise;
 import ma.ensa.metiers.TypeAttestationEntrepriseMetier;
 
 @RestController
-@RequestMapping("/typeAttestationEntreprise")
+@RequestMapping("/parametres/typeAttestationEntreprise")
 public class TypeAttestationEntrepriseControllerImpl implements TypeAttestationEntrepriseController {
 
 	@Autowired

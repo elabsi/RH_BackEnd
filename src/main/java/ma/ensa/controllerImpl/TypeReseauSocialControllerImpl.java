@@ -14,7 +14,7 @@ import ma.ensa.entities.TypeReseauSocial;
 import ma.ensa.metiers.TypeReseauSocialMetier;
 
 @RestController
-@RequestMapping("/typeReseauSocial")
+@RequestMapping("/parametres/typeReseauSocial")
 public class TypeReseauSocialControllerImpl implements TypeReseauSocialController {
  
 	@Autowired

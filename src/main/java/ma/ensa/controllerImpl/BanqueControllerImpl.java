@@ -1,6 +1,6 @@
 package ma.ensa.controllerImpl;
 
-import java.util.List ;
+import java.util.List  ;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +14,7 @@ import ma.ensa.entities.Banque;
 import ma.ensa.metiers.BanqueMetier;
 
 @RestController
-@RequestMapping("/banque")
+@RequestMapping("/parametres/banque")
 public class BanqueControllerImpl implements BanqueController {
  
 	@Autowired

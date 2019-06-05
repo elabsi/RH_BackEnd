@@ -14,7 +14,7 @@ import ma.ensa.entities.NiveauScolaireContact;
 import ma.ensa.metiers.NiveauScolaireContactMetier;
 
 @RestController
-@RequestMapping("/niveauScolaireContact")
+@RequestMapping("/parametres/niveauScolaireContact")
 public class NiveauScolaireContactControllerImpl implements NiveauScolaireContactController{
  
 	@Autowired

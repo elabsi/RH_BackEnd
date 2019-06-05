@@ -14,7 +14,7 @@ import ma.ensa.entities.TypeTelephone;
 import ma.ensa.metiers.TypeTelephoneMetier;
 
 @RestController
-@RequestMapping("/typeTelephone")
+@RequestMapping("/parametres/typeTelephone")
 public class TypeTelephoneControllerImpl implements TypeTelephoneController {
  
 	@Autowired

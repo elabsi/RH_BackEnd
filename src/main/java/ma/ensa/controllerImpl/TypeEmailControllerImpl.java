@@ -14,7 +14,7 @@ import ma.ensa.entities.TypeEmail;
 import ma.ensa.metiers.TypeEmailMetier;
 
 @RestController
-@RequestMapping("/typeEmail")
+@RequestMapping("/parametres/typeEmail")
 public class TypeEmailControllerImpl implements TypeEmailController{
 	@Autowired
 	private TypeEmailMetier typeEmailMetier;

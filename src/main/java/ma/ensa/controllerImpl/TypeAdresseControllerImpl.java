@@ -14,7 +14,7 @@ import ma.ensa.entities.TypeAdresse;
 import ma.ensa.metiers.TypeAdresseMetier;
 
 @RestController
-@RequestMapping("/typeAdresse")
+@RequestMapping("/parametres/typeAdresse")
 public class TypeAdresseControllerImpl implements TypeAdresseController {
  
 	@Autowired

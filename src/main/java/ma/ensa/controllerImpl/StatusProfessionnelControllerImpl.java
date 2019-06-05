@@ -14,7 +14,7 @@ import ma.ensa.entities.StatusProfessionnel;
 import ma.ensa.metiers.StatusProfessionnelMetier;
 
 @RestController
-@RequestMapping("statusProfessionnel")
+@RequestMapping("parametres/statusProfessionnel")
 public class StatusProfessionnelControllerImpl implements StatusProfessionnelController {
 	@Autowired
 	private StatusProfessionnelMetier statusProfessionnelMetier;
