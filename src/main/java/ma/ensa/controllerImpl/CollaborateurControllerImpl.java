@@ -59,5 +59,12 @@ public class CollaborateurControllerImpl implements CollaborateurController {
 	public int countCollaborateur(@RequestParam(name = "q") String q) {
 		return this.collaborateurMetier.countCollaborateur(q);
 	}
+
+	@Override
+	@RequestMapping("/switchCompteActive")
+	public void switchCompteActive(@RequestBody Long id) {
+		this.collaborateurMetier.switchCompteActive(id);
+		
+	}
 	
 }

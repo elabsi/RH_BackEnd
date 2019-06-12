@@ -22,7 +22,6 @@ public class Collaborateur extends Contact {
 	private String numMutuelle;
 	private boolean permisConduire;
 	private boolean compteActive;
-	private String motDePass;
 	private String photo;
 	@OneToMany(mappedBy = "collaborateur")
 	@JsonIgnore
@@ -60,7 +59,7 @@ public class Collaborateur extends Contact {
 	
 	
 	public Collaborateur(String matricule, String numCNSS, String numCIMR, String numMutuelle, boolean permisConduire,
-			boolean compteActive, String motDePass, String photo) {
+			boolean compteActive, String photo) {
 		super();
 		this.matricule = matricule;
 		this.numCNSS = numCNSS;
@@ -68,7 +67,6 @@ public class Collaborateur extends Contact {
 		this.numMutuelle = numMutuelle;
 		this.permisConduire = permisConduire;
 		this.compteActive = compteActive;
-		this.motDePass = motDePass;
 		this.photo = photo;
 	}
 	public List<LigneGroupe> getLigneGroupes() {
@@ -119,12 +117,6 @@ public class Collaborateur extends Contact {
 	public void setCompteActive(boolean compteActive) {
 		this.compteActive = compteActive;
 	}
-	public String getMotDePass() {
-		return motDePass;
-	}
-	public void setMotDePass(String motDePass) {
-		this.motDePass = motDePass;
-	}
 	public String getPhoto() {
 		return photo;
 	}
@@ -133,7 +125,6 @@ public class Collaborateur extends Contact {
 	}
 	public Collaborateur() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	

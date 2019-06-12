@@ -12,5 +12,6 @@ public interface CollaborateurMetier{
 	public List<Collaborateur> allCollaborateurs();
 	public List<Collaborateur> search(String q, int page, int size);
 	public int countCollaborateur(String q);
+	public void switchCompteActive(Long  id);
 	
 }

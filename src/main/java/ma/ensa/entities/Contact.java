@@ -12,8 +12,13 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import ma.ensa.entities.user.Utilisateur;
 
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
@@ -54,9 +59,18 @@ public abstract class Contact {
 	@ManyToOne
 	private NiveauScolaireContact niveauScolaire1;
 	
+	@OneToOne(mappedBy = "contact")
+	@JsonIgnore
+	private Utilisateur utilisateur;
 	
 	
 	
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
 	public Contact(Long id, String nom, String prenom, String sexe, String civilite, Date dateNaissance, String cin,
 			String situationFamiliale) {
 		super();

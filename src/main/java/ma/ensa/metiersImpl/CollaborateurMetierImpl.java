@@ -46,5 +46,15 @@ public class CollaborateurMetierImpl implements CollaborateurMetier {
 		return this.dao.findByNomContainingOrPrenomContaining(q, q).size();
 	}
 
+	@Override
+	public void switchCompteActive(Long id) {
+		Collaborateur c = dao.findById(id).get();
+
+			c.setCompteActive(!c.isCompteActive());
+			
+		dao.save(c);
+		
+	}
+
 	
 }

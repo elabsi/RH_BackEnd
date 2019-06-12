@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Email;
@@ -18,6 +19,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.NaturalId;
+
+import ma.ensa.entities.Contact;
 
 @Entity
 @Table(name = "users", uniqueConstraints = {
@@ -47,6 +50,7 @@ public class Utilisateur{
     @Email
     private String email;
 
+    
     @NotBlank
     @Size(min=6, max = 100)
     private String password;
@@ -57,7 +61,17 @@ public class Utilisateur{
     	inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    public Utilisateur() {}
+    @OneToOne
+    private Contact contact;
+    public Contact getContact() {
+		return contact;
+	}
+
+	public void setContact(Contact contact) {
+		this.contact = contact;
+	}
+
+	public Utilisateur() {}
 
     public Utilisateur(String name, String username, String email, String password) {
         this.name = name;

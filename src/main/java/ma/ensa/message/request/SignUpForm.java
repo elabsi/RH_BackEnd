@@ -23,8 +23,18 @@ public class SignUpForm {
     @NotBlank
     @Size(min = 6, max = 40)
     private String password;
+    
+    private Long idContact;
 
-    public String getName() {
+    public Long getIdContact() {
+		return idContact;
+	}
+
+	public void setIdContact(Long idContact) {
+		this.idContact = idContact;
+	}
+
+	public String getName() {
         return name;
     }
 
