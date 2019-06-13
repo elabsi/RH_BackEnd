@@ -3,6 +3,7 @@ package ma.ensa.metiers;
 import java.util.List;
 
 import ma.ensa.entities.user.Utilisateur;
+import ma.ensa.message.request.LoginForm;
 
 
 public interface UtilisateurMetier {
@@ -12,5 +13,6 @@ public interface UtilisateurMetier {
 	public Utilisateur getCurrentUser();
 	public Utilisateur getUser(String username);
 	public List<Utilisateur> allUsers();
+	public boolean updateMdp(LoginForm lf);
 
 }

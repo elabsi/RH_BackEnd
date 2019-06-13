@@ -42,5 +42,11 @@ public class DemandeAuTravControllerImpl implements DemandeAuTravController {
 	public List<DemandeAuTrav> allDemandeAuTravs() {
 		return demandeAuTravMetier.allDemandeAuTravs();
 	}
+
+	@Override
+	@PostMapping("/employe/allDemandeAuTravs")
+	public List<DemandeAuTrav> allDemandeAuTravs(@RequestBody String username) {
+		return demandeAuTravMetier.allDemandeAuTravs(username);
+	}
 	
 }

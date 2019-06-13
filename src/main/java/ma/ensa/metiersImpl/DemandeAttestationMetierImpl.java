@@ -6,12 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ma.ensa.dao.DemandeAttestationDao;
+import ma.ensa.dao.UtilisateurDao;
+import ma.ensa.entities.Collaborateur;
 import ma.ensa.entities.DemandeAttestation;
 import ma.ensa.metiers.DemandeAttestationMetier;
 
 @Service
 public class DemandeAttestationMetierImpl implements DemandeAttestationMetier {
  
+	@Autowired
+	private UtilisateurDao ud;
 	@Autowired
 	private DemandeAttestationDao dao;
 	@Override
@@ -32,6 +36,12 @@ public class DemandeAttestationMetierImpl implements DemandeAttestationMetier {
 	@Override
 	public List<DemandeAttestation> allDemandeAttestations() {
 		return this.dao.findAll();
+	}
+	@Override
+	public List<DemandeAttestation> allDemandeAttestations(String username) {
+		Collaborateur c = (Collaborateur) this.ud.findByUsername(username).get().getContact();
+		
+		return this.dao.findByCollaborateur(c);
 	}
 
 	

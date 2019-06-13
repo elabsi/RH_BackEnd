@@ -42,5 +42,11 @@ public class DemandeAbsenceControllerImpl implements DemandeAbsenceController {
 	public List<DemandeAbsence> allDemandeAbsences() {
 		return demandeAbsenceMetier.allDemandeAbsences();
 	}
+
+	@Override
+	@PostMapping("/employe/allDemandeAbsences")
+	public List<DemandeAbsence> allDemandeAbsences(@RequestBody String username) {
+		return demandeAbsenceMetier.allDemandeAbsences(username);
+	}
 	
 }

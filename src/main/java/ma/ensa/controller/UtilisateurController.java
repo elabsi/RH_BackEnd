@@ -3,6 +3,7 @@ package ma.ensa.controller;
 import java.util.List;
 
 import ma.ensa.entities.user.Utilisateur;
+import ma.ensa.message.request.LoginForm;
 
 public interface UtilisateurController {
 
@@ -11,5 +12,5 @@ public interface UtilisateurController {
 	public Utilisateur getCurrentUser();
 	public Utilisateur getUser(String username);
 	public List<Utilisateur> allUsers();
-	
+	public boolean updateMdp(LoginForm lf);	
 }

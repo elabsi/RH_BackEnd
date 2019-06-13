@@ -42,5 +42,11 @@ public class DemandeAttestationControllerImpl implements DemandeAttestationContr
 	public List<DemandeAttestation> allDemandeAttestations() {
 		return demandeAttestationMetier.allDemandeAttestations();
 	}
+
+	@Override
+	@PostMapping("/employe/allDemandeAttestations")
+	public List<DemandeAttestation> allDemandeAttestations(@RequestBody String username) {
+		return demandeAttestationMetier.allDemandeAttestations(username);
+	}
 	
 }

@@ -10,5 +10,6 @@ public interface DemandeAttestationController {
 	public void updateDemandeAttestation(DemandeAttestation departement);
 	public DemandeAttestation getDemandeAttestationById(Long id);
 	public List<DemandeAttestation> allDemandeAttestations();
+	public List<DemandeAttestation> allDemandeAttestations(String username);
 
 }

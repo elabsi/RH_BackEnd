@@ -10,5 +10,6 @@ public interface DemandeAuthSortieController {
 	public void updateDemandeAuthSortie(DemandeAuthSortie departement);
 	public DemandeAuthSortie getDemandeAuthSortieById(Long id);
 	public List<DemandeAuthSortie> allDemandeAuthSorties();
+	public List<DemandeAuthSortie> allDemandeAuthSorties(String username);
 
 }

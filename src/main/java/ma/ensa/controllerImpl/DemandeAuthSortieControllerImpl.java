@@ -42,5 +42,11 @@ public class DemandeAuthSortieControllerImpl implements DemandeAuthSortieControl
 	public List<DemandeAuthSortie> allDemandeAuthSorties() {
 		return demandeAuthSortieMetier.allDemandeAuthSorties();
 	}
+
+	@Override
+	@PostMapping("/employe/allDemandeAuthSorties")
+	public List<DemandeAuthSortie> allDemandeAuthSorties(@RequestBody String username) {
+		return demandeAuthSortieMetier.allDemandeAuthSorties(username);
+	}
 	
 }

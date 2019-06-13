@@ -11,5 +11,6 @@ public interface DemandeAbsenceMetier{
 	public void updateDemandeAbsence(DemandeAbsence departement);
 	public DemandeAbsence getDemandeAbsenceById(Long id);
 	public List<DemandeAbsence> allDemandeAbsences();
-
+	public List<DemandeAbsence> allDemandeAbsences(String username);
+	
 }

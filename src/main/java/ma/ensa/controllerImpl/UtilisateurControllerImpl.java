@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ma.ensa.controller.UtilisateurController;
 import ma.ensa.entities.user.Utilisateur;
+import ma.ensa.message.request.LoginForm;
 import ma.ensa.metiers.UtilisateurMetier;
 
 @RestController
@@ -47,5 +48,9 @@ public class UtilisateurControllerImpl implements UtilisateurController{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	@Override
+	@RequestMapping("/updateMdp")
+	public boolean updateMdp(@RequestBody LoginForm lf) {
+		return utilisateurMetier.updateMdp(lf);
+	}
 }

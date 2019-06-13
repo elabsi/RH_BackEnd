@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ma.ensa.dao.DemandeTravailDao;
+import ma.ensa.dao.UtilisateurDao;
+import ma.ensa.entities.Collaborateur;
 import ma.ensa.entities.DemandeAuTrav;
 import ma.ensa.metiers.DemandeAuTravMetier;
 
@@ -15,6 +17,8 @@ public class DemandeAuTravMetierImpl implements DemandeAuTravMetier {
  
 	@Autowired
 	private DemandeTravailDao dao;
+	@Autowired
+	private UtilisateurDao ud;
 	@Override
 	public DemandeAuTrav getDemandeAuTravById(Long id) {
 		return this.dao.findById(id).get();
@@ -33,6 +37,12 @@ public class DemandeAuTravMetierImpl implements DemandeAuTravMetier {
 	@Override
 	public List<DemandeAuTrav> allDemandeAuTravs() {
 		return this.dao.findAll();
+	}
+	@Override
+	public List<DemandeAuTrav> allDemandeAuTravs(String username) {
+		Collaborateur c = (Collaborateur) this.ud.findByUsername(username).get().getContact();
+		
+		return this.dao.findByCollaborateur(c);
 	}
 
 	

@@ -6,15 +6,19 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import ma.ensa.dao.UtilisateurDao;
 import ma.ensa.entities.user.Utilisateur;
+import ma.ensa.message.request.LoginForm;
 import ma.ensa.metiers.UtilisateurMetier;
 
 @Service
 public class UtilisateurMetierImpl implements UtilisateurMetier {
  
+	@Autowired
+	PasswordEncoder encoder;
 	@Autowired
 	private UtilisateurDao dao;
 	@Override
@@ -61,6 +65,14 @@ public class UtilisateurMetierImpl implements UtilisateurMetier {
 		} else {
 			return null;
 		}
+	}
+
+	@Override
+	public boolean updateMdp(LoginForm lf) {
+		Utilisateur u = this.dao.findByUsername(lf.getUsername()).get();
+		u.setPassword(encoder.encode(lf.getPassword()));
+		dao.save(u);
+		return true;
 	}
 
 	

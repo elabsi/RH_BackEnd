@@ -10,5 +10,6 @@ public interface DemandeAuTravMetier {
 	public void updateDemandeAuTrav(DemandeAuTrav departement);
 	public DemandeAuTrav getDemandeAuTravById(Long id);
 	public List<DemandeAuTrav> allDemandeAuTravs();
+	public List<DemandeAuTrav> allDemandeAuTravs(String username);
 
 }
