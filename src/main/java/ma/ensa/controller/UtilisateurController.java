@@ -13,4 +13,7 @@ public interface UtilisateurController {
 	public Utilisateur getUser(String username);
 	public List<Utilisateur> allUsers();
 	public boolean updateMdp(LoginForm lf);	
+	public Utilisateur getUserByCollabId(Long id);
+	public boolean addRole(String role, Long CollabId);
+
 }

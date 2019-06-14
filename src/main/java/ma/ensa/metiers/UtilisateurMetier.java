@@ -14,5 +14,8 @@ public interface UtilisateurMetier {
 	public Utilisateur getUser(String username);
 	public List<Utilisateur> allUsers();
 	public boolean updateMdp(LoginForm lf);
+	public boolean addRole(String role, Long CollabId);
+	public Utilisateur getUserByCollabId(Long id);
+	
 
 }

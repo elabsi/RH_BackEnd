@@ -3,6 +3,7 @@ package ma.ensa.controllerImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,8 +50,19 @@ public class UtilisateurControllerImpl implements UtilisateurController{
 		return null;
 	}
 	@Override
+	@RequestMapping("/getUserByCollabId")
+	public Utilisateur getUserByCollabId(@RequestBody Long id) {
+		return this.utilisateurMetier.getUserByCollabId(id);
+	}
+	@Override
 	@RequestMapping("/updateMdp")
 	public boolean updateMdp(@RequestBody LoginForm lf) {
 		return utilisateurMetier.updateMdp(lf);
+	}
+
+	@Override
+	@RequestMapping("/{id}/addRole")
+	public boolean addRole(@RequestBody String role, @PathVariable Long id) {
+		return this.utilisateurMetier.addRole(role, id);
 	}
 }
